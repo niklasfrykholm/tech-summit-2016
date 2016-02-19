@@ -58,8 +58,55 @@ Most of my examples will be from C++, but since these are core CPU properties th
 * Multicore processing and data flow vs individual objects
 * Data-oriented programming in JavaScript
 
-## Spm + one button builds
+IMAGE OF JAVASCRIPT PARTICLES
 
+## The Stingray Package Manager and Build System
 
+Having a one-button build system makes a project much more accessible to new users and thus facilitates openness and code sharing. It also has a lot of other advantages:
 
-## Extensible architecture
+* Facilitate continous integration
+* Easily build historic versions of the product, which enables `git bisect`
+
+This talk will present the Stingray build system, and especially the Stingray Package Manager (spm) which we use for downloading and installing third-party libs. To be useful, a package managing tool needs to be fast, user friendly and not use too much disk space (a real issue, since some libraries can be gigabyte sized). This talk will discuss how we solved these technical challenges and present a solution that can be used by everybody who wants to manage builds with third party products.
+
+* Advantages of a one-button build system
+* Stingray's build system (ruby + CMAKE + spm)
+* The Stingray Package Manager
+	* Requirements
+	* Design
+	* spm versus git lfs
+	* "Secret" packages
+	* Testing locally
+	* From "decent" to "excellent" -- finishing touches
+* Advantages of one-button builds
+	* `git bisect`
+	* Gathering performance statistics
+* Challenges
+	* Hard versioning SDKs and OSs
+	* Bootstrapping -- installing Ruby
+	* Commercial software installs
+
+IMAGE OF SPM RUNNING
+
+IMAGE OF ONLINE BUILD SYSTEM
+
+IMAGE OF PERFORMANCE GRAPH
+
+## Extensible architecture -- Opening the floodgates without ruining the pond
+
+The move towards "software as a platform" presents many interesting challenges. As more and more people want to build stuff on top of your foundation you will struggle to preserve cohesion, quality and sanity.
+
+This talk will present the solutions we use in the Stingray game engine to allow other teams and end customers to extend the engine and build new products on top of it. We will look at how things like scripting and use of open standards facilitate sharing. We will also take a more in-depth look at the Stingray plug-in system and how how that has been designed to provide maximum flexibility while protecting the Stingray core.
+
+* The challenges of being a "platform"
+	* The dangers of "opening the floodgates"
+	* The challenge of Us and Them
+* Protectic core code values, while still allowing "hacking" and extensibility
+	* Clean and minimalistic interaction interfaces
+	* Front doors and back doors
+* Stingray solutions for extensibility
+	* Scripting
+	* Open standards: JSON, Websockets
+	* Entity/component architecture
+	* The engine plugin system
+* Thoughts and future plans for tools extensibility
