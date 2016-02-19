@@ -19,8 +19,8 @@ unique features that are not available in any other game engines.
 ## Intended Audience & Prerequisites
 
 This talk is intended for anyone who is interested in learning more about
-game engine technology or are interested in using parts of the Stingray
-technology for their own projects.
+game engine technology or in using parts of Stingray
+for their own projects.
 
 ## Presentation Outline
 
